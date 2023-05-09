@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/mhz19b_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MHZ19-B"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"/>
+
+    <!-- Sensor description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mhz19b_title"
+        android:text="The MHZ19-B is a popular CO2 sensor module used in various applications such as indoor air quality monitoring, ventilation control, and greenhouse monitoring. It uses non-dispersive infrared (NDIR) technology to measure the concentration of CO2 in the air. The MHZ19-B sensor has a measurement range of 0 to 5000 ppm (parts per million) with an accuracy of ±50 ppm."
+        android:textSize="16sp"
+        android:padding="15dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PyreRanger IoT Monitoring Console"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/gas_sensor_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text"
+            android:layout_marginTop="32dp">
+            <TextView
+                android:id="@+id/gas_sensor_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gas Sensor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"/>
+
+            <Button
+                android:id="@+id/refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refresh"
+                android:layout_alignTop="@id/gas_sensor_text"
+                android:layout_toEndOf="@id/gas_sensor_text"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"/>
+        </RelativeLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sensor_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gas_sensor_layout"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/readables_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Readables"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_below="@id/sensor_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/readables_text"/>
+
+    </RelativeLayout>
+</ScrollView>
+

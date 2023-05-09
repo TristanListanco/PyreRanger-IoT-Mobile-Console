@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pms5003_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PMS5003"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"/>
+
+    <!-- Sensor description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pms5003_title"
+        android:text="The PMS5003 is a high-precision laser particle sensor that can detect particles with a diameter of 0.3 μm and above. It is commonly used to measure air quality and is ideal for use in air purifiers, air conditioners, and other air quality monitoring devices."
+        android:textSize="16sp"
+        android:padding="15dp"/>
+
+</RelativeLayout>

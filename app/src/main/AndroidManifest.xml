@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PyreRangerIoTMonitoringConsole"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MQ131Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.PyreRangerIoTMonitoringConsole">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".MP503Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".MP503Activity"
+            android:theme="@style/Theme.PyreRangerIoTMonitoringConsole">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MP503Activity" />
+        </activity>
+        <activity
+            android:name=".PMS5003Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".PMS5003Activity"
+            android:theme="@style/Theme.PyreRangerIoTMonitoringConsole">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PMS5003Activity" />
+        </activity>
+        <activity
+            android:name=".MHZ19BActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".MHZ19BActivity"
+            android:theme="@style/Theme.PyreRangerIoTMonitoringConsole">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MHZ19BActivity" />
+        </activity>
+        <activity
+            android:name=".ArticleActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ArticleActivity"
+            android:theme="@style/Theme.PyreRangerIoTMonitoringConsole">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ArticleActivity" />
+        </activity>
+    </application>
+
+</manifest>
