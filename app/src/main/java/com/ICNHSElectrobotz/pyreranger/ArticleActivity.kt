@@ -1,4 +1,3 @@
 package com.ICNHSElectrobotz.pyreranger
 
-class ArticleActivity {
-}
+class ArticleActivity

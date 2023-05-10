@@ -65,6 +65,23 @@
             android:layout_height="match_parent"
             android:layout_below="@id/readables_text"/>
 
+
+        <TextView
+            android:id="@+id/api_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="USER DATA (debug mode)"
+            android:layout_below="@id/recyclerview"
+            android:padding="16dp"/>
+        <TextView
+            android:id="@+id/api_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@+id/api_user_info"
+            android:padding="16dp"/>
+
     </RelativeLayout>
 </ScrollView>
 
