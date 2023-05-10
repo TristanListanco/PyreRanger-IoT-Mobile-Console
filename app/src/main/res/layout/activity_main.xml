@@ -28,17 +28,16 @@
                 android:text="Gas Sensor"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="32dp"/>
+                android:layout_marginTop="32dp"
+                android:layout_alignParentStart="true"/>
 
             <Button
                 android:id="@+id/refresh_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Refresh"
-                android:layout_alignTop="@id/gas_sensor_text"
-                android:layout_toEndOf="@id/gas_sensor_text"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"/>
+                android:layout_alignParentEnd="true"
+                android:layout_alignBaseline="@id/gas_sensor_text"/>
         </RelativeLayout>
 
 

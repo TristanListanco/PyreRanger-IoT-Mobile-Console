@@ -4,6 +4,7 @@ import ArticleAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Path
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +30,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var articleAdapter: ArticleAdapter
 
+    private val BASE_URL = "https://io.adafruit.com/api/v2/tannyencina/feeds/gas/"
+    private val FEED_KEY = "gas"
+
+    // Define the API interface
+    interface AdafruitIOAPI {
+        @GET("feeds/{feed_key}")
+        fun getFeed(@Path("feed_key") feedKey: String): Call<Feed>
+    }
+
+    // Define the Feed data class
+    data class Feed(
+        val id: String,
+        val name: String,
+        val last_value: String,
+        val created_at: String
+    )
+
 
     data class Article(val title: String, val description: String)
 
@@ -27,6 +54,36 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Create a Retrofit instance
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        // Create an instance of the AdafruitIOAPI interface
+        val adafruitIOAPI = retrofit.create(AdafruitIOAPI::class.java)
+
+//        // Make a request to the API to get the feed with the key "my_feed_key"
+//        adafruitIOAPI.getFeed(FEED_KEY).enqueue(object : Callback<Feed> {
+//            override fun onResponse(call: Call<Feed>, response: Response<Feed>) {
+//                if (response.isSuccessful) {
+//                    val feed = response.body()
+//                    // Use the feed data to update your UI
+//                    sensor_value.text = "${feed?.last_value} ppm"
+//                    val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault()).parse(feed?.created_at)
+//                    date_text_view.text = SimpleDateFormat("EEE, MMM d, yyyy 'at' h:mm a", Locale.getDefault()).format(date)
+//                } else {
+//                    // Handle the error
+//                    Log.e("MainActivity", "Error: ${response.code()}")
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<Feed>, t: Throwable) {
+//                // Handle the failure
+//                Log.e("MainActivity", "Error: ${t.message}")
+//            }
+//        })
 
         sensorRecyclerView = findViewById(R.id.sensor_list)
 
